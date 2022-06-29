@@ -43,9 +43,9 @@ def initial():
     if not_initial_pass == 0:
 
         number_entries, dataset2 = importing_file()
-        print(not_initial_pass, "= initial_pass")
+        print(f"{not_initial_pass} = initial_pass")
         not_initial_pass += 1
-        print(not_initial_pass, "= initial_pass")
+        print(f"{not_initial_pass} = initial_pass")
         counter = count_entry(number_entries, dataset2)
         return counter
     else:
@@ -84,9 +84,7 @@ def importing_file():
                 loading_entries = int(a_string)
                 first_pass += 1
     else:
-        print("First Pass = ", first_pass)
-    # print(loading_entries, " = loading entries")
-    # count_entry(loading_entries, dataset2)
+        print(f"First Pass = {first_pass}")
     return loading_entries, dataset2
 
 # ******************  END Importing the data file function *****************
@@ -127,12 +125,12 @@ def credits_f():
 #                            START OF main FUNCTION                        *
 # **************************************************************************
 
-def main():
+def main(count, data_set2):
 
     counter = initial()
     count = counter[0]
     data_set2 = counter[1]
-    print("There are ", count, " entries")
+    print(f"There are {count} entries")
     print()
     print("          *** Enter Your Choice of Menu ***")
     print("            -------------------------    ")
@@ -159,18 +157,18 @@ def menu(count, data_set2):  # to select one of the listed func.
     if users_choice == 1:
         add_f(count, data_set2)  # dec of Add func
         print()
-        main()
+        main(count, data_set2)
     elif users_choice == 2:
-        print("the count is ", count, "entries")
+        print(f"the count is {count}, entries")
         pass
-        main()
+        main(count, data_set2)
         # delete()               # dec of Delete func
     elif users_choice == 3:
         display(count, data_set2)  # dec of display func
-        main()
+        main(count, data_set2)
     elif users_choice == 4:
         pass
-        main()
+        main(count, data_set2)
         # Find(users_choice2)     # dec of Find menu
     elif users_choice == 5:
         print("       Thank you for using the database program")
@@ -200,7 +198,7 @@ def add_f(count, data_set2):
     print("          Please input the persons details for:-")
     print("          Name, ", "Address, ", "Sex, ", "Age, ")
     print("          Phone Numbers ", "and Birthday. ")
-    print("          This Is Entry # ", groo, " In Your Address Book.")
+    print(f"          This Is Entry # {groo} In Your Address Book.")
     print()
     print()
 
@@ -289,8 +287,8 @@ def display(count, data_set2):
     sloo = 1
     poo += 1
     dummy = "y"
-    print("number_of_entries_display = ", count)
-    print("          ***   This is the ", sloo, "of ", count, " entries stored.   ***")
+    print(f"number_of_entries_display = {count}")
+    print(f"          ***   This is the {sloo} of {count} entries stored.   ***")
 
     while sloo < count + 1:
         print("          Name          - ", data_set2_display[poo])
@@ -300,7 +298,7 @@ def display(count, data_set2):
         print("          Phone         - ", data_set2_display[poo+4])
         print("          Date of Birth - ", data_set2_display[poo+5])
         print("          Date of Entry - ", data_set2_display[poo+6])
-        print("     Entry Number: ", sloo, "     ...Are you ready for Another ?...")
+        print(f"     Entry Number: {sloo}    ...Are you ready for Another ?...")
         input(str(dummy))
         sloo += 1
         poo += 7

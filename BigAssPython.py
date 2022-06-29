@@ -17,4 +17,4 @@ if __name__ == '__main__':
 
     big_func.credits_f()
 
-    big_func.main()
+    big_func.main(count=0, data_set2=None )
