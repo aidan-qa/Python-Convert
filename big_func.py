@@ -71,7 +71,7 @@ def importing_file():
 
         dataset: list[list[str]] = [line.strip("  - ' \n").split(',') for line in open(path)]
 
-        strings_set = [str(integer) for integer in dataset]
+        # strings_set = [str(integer) for integer in dataset]
         # a_string = "".join(strings_set).strip('             - \n')
 
         dataset2 = dataset
@@ -267,15 +267,14 @@ def add_f(count, data_set2):
     data_set2_add.append(",")
     data_set2_add.append(date_stamp)
     count += 1
-    # number_entries_add = number_of_entries_add
-    # update number of entries with new string value
+
+    # append updated count to list
     num_temp_entries = str(count)
     num_temp_entries += "             - # of Entries."
     data_set2_add[0] = num_temp_entries
 
     print("          You will now return to the MAIN MENU. ")
-
-    count_entry(count, data_set2_add)
+    return count, data_set2_add
 # *********************    END add_f FUNC.    ****************************
 
 
